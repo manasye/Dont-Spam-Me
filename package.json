@@ -1,0 +1,22 @@
+    {
+  "name": "manasye.github.io",
+  "version": "1.0.0",
+  "description": "Web portfolio",
+  "main": "index.html",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manasye/manasye.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manasye/manasye.github.io/issues"
+  },
+  "homepage": "https://github.com/manasye/manasye.github.io#readme",
+  "dependencies": {
+    "node-sass": "^4.7.2"
+  }
+}

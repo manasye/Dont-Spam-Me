@@ -1,2 +1,4 @@
-# Spam-Analyzer
-Web Application that can analyze spam using KMP,Boyer-Moore,and Regular Expression 
+# manasye.github.io
+My web portfolio
+
+The magic happen in sass folder
