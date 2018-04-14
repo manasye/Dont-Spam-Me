@@ -1,12 +1,3 @@
-<?php
-    $consumer_key = '0jXK5oAWkQgYh7fMwhOPhUuQe';
-    $consumer_secret = 'kALTJ1ZFthv25r4iCskTCxXjhPodq53NIybPCZU6KUeYM1RL0p';
-    $access_token = '985003482422829057-Wr7CJHgcbR3Enf90VySd05HXPjgTVtU';
-    $access_token_secret = 'o4wpHsDLomI59bPmhjoPMMKEN6AKRVEZYKI5UR1FZJzzg';
-    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
-    $tweets = $connection -> get('https://api.twitter.com/1.1/search/tweets.json?q=merhaba&result_type=recent&count=20');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -79,12 +70,9 @@
                     </div>
 
                     <div class="col-1-of-2">
-                        <!-- <h3 class="heading-tertiary u-margin-bottom-small ">
+                        <h3 class="heading-tertiary u-margin-bottom-small ">
                             Generated Post From (What) API
-                        </h3> -->
-                        <?php foreach ($tweets->statuses as $key => $tweet) { ?>
-                            Tweet : <img src="<?=$tweet->user->profile_image_url;?>" /><?=$tweet->text; ?><br>
-                        <?php } ?>
+                        </h3>
                         <p class="paragraph">
                             Bunch of API here
                         </p>
