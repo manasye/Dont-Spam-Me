@@ -45,9 +45,9 @@
         </header>
 
         <main>
-            <section class="section-app" id="section-app">
+            <section class="section-app">
                 <div class="u-center-text u-margin-bottom-big u-center-top-large">
-                    <h2 class="heading-secondary">
+                    <h2 class="heading-secondary" id="section-app">
                         Spam Analyzer
                     </h2>
                 </div>
@@ -58,7 +58,7 @@
                             Input Keywords : 
                         </h3>
                         <textarea name="input-column" id="input-column" cols="40" rows="1"></textarea>
-                        <a href="#algorithm" class="btn btn--whitegreen btn--animated">Submit</a>
+                        <!-- <a href="#algorithm" class="btn btn--whitegreen btn--animated">Submit</a> -->
                         <h3 class="heading-tertiary u-margin-bottom-small u-margin-top-medium">
                             Choose Algorithm : 
                         </h3>
