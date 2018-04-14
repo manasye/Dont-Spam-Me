@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-1-of-2">
+                    <div class="col-1-of-3">
                         <h3 class="heading-tertiary u-margin-bottom-small ">
                             Input Keywords : 
                         </h3>
@@ -69,9 +69,9 @@
                         </div>
                     </div>
 
-                    <div class="col-1-of-2" id="posts">
+                    <div class="col-2-of-3" id="posts">
                         <h3 class="heading-tertiary u-margin-bottom-small ">
-                            Generated Post From Twitter API
+                            Generated Post From Twitter API : 
                         </h3>
                     </div>
                 </div>
