@@ -18,8 +18,7 @@ class print_listener(tweepy.StreamListener):
             tweet = json.loads(data)
 
             # Print out the Tweet
-            list_of_posts.append(tweet['text'].encode('ascii', 'ignore'))
-            print(tweet['text'].encode('ascii', 'ignore'))
+            list_of_posts.append(tweet['text'].encode('ascii', 'ignore').decode('utf-8'))
             return True
 
         else:
@@ -52,4 +51,5 @@ if __name__ == '__main__':
     stream = tweepy.Stream(auth, listener)
     stream.filter(track=['Aku'])
 
-    print(len(list_of_posts))
+    list_of_posts = list_of_posts
+    print(list_of_posts)
