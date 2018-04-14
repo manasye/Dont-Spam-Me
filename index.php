@@ -71,7 +71,7 @@
 
                     <div class="col-1-of-2">
                         <h3 class="heading-tertiary u-margin-bottom-small ">
-                            Generated Post From (What) API
+                            Generated Post From Twitter API
                         </h3>
                         <p class="paragraph">
                             Bunch of API here
