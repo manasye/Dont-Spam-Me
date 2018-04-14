@@ -8,7 +8,7 @@ list_of_posts = []
 # This listener will print out all Tweets it receives
 class print_listener(tweepy.StreamListener):
 
-    def __init__(self, time_limit = 7): # Set the time limit
+    def __init__(self, time_limit = 10): # Set the time limit
         self.start_time = time.time()
         self.limit = time_limit
 
