@@ -69,13 +69,10 @@
                         </div>
                     </div>
 
-                    <div class="col-1-of-2">
+                    <div class="col-1-of-2" id="posts">
                         <h3 class="heading-tertiary u-margin-bottom-small ">
                             Generated Post From Twitter API
                         </h3>
-                        <p class="paragraph">
-                            Bunch of API here
-                        </p>
                     </div>
                 </div>
             </section>

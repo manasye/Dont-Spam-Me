@@ -138,12 +138,12 @@ body {
 }
 
 .paragraph {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   text-align: justify; 
 }
 
 .paragraph:not(:last-child) {
-  margin-bottom: 3rem; 
+  margin-bottom: 1rem; 
 }
 
 .u-center-text {
