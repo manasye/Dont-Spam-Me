@@ -163,6 +163,10 @@ body {
     } 
   }
 
+.u-margin-top-medium {
+  margin-top: 4rem;
+}
+
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; 
 }
@@ -172,8 +176,24 @@ body {
     } 
   }
 
+  @media (max-width: 37.5em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 2rem !important;
+    }
+  }
+
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; 
+}
+
+#input-column {
+  margin-bottom: 1.5rem;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Lato";  
+  margin-right: 50%;
+  border: none;
 }
 
 .btn:link, .btn:visited {
@@ -216,6 +236,17 @@ body {
 .btn--green::after {
   background-color: #55c57a;
 }
+
+.btn--whitegreen {
+  background-color: #37474F;
+  color: #fff;
+  margin: 1rem;
+}
+
+.btn--whitegreen::after {
+  background-color: #37474F;
+}
+
 
 .btn::after {
   content: "";

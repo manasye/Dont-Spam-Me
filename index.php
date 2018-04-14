@@ -1,3 +1,12 @@
+<?php
+    $consumer_key = '0jXK5oAWkQgYh7fMwhOPhUuQe';
+    $consumer_secret = 'kALTJ1ZFthv25r4iCskTCxXjhPodq53NIybPCZU6KUeYM1RL0p';
+    $access_token = '985003482422829057-Wr7CJHgcbR3Enf90VySd05HXPjgTVtU';
+    $access_token_secret = 'o4wpHsDLomI59bPmhjoPMMKEN6AKRVEZYKI5UR1FZJzzg';
+    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+    $tweets = $connection -> get('https://api.twitter.com/1.1/search/tweets.json?q=merhaba&result_type=recent&count=20');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +34,7 @@
             <nav class="navigation__nav">
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="#homepage" class="navigation__link">Home</a></li>
-                    <li class="navigation__item"><a href="#spam-analyzer" class="navigation__link">Spam Analyzer</a></li>
+                    <li class="navigation__item"><a href="#section-app" class="navigation__link">Spam Analyzer</a></li>
                     <li class="navigation__item"><a href="#about" class="navigation__link">About Us</a></li>
                 </ul>
             </nav>
@@ -45,7 +54,7 @@
         </header>
 
         <main>
-            <section class="section-app" id="spam-analyzer">
+            <section class="section-app" id="section-app">
                 <div class="u-center-text u-margin-bottom-big u-center-top-large">
                     <h2 class="heading-secondary">
                         Spam Analyzer
@@ -57,21 +66,25 @@
                         <h3 class="heading-tertiary u-margin-bottom-small ">
                             Input Keywords : 
                         </h3>
-                        <p class="paragraph">
-                            Textbox
-                        </p>
-                        <h3 class="heading-tertiary u-margin-bottom-small">
+                        <textarea name="input-column" id="input-column" cols="40" rows="1"></textarea>
+                        <a href="#algorithm" class="btn btn--whitegreen btn--animated">Submit</a>
+                        <h3 class="heading-tertiary u-margin-bottom-small u-margin-top-medium">
                             Choose Algorithm : 
                         </h3>
-                        <a href="#section-about" class="btn btn--green btn--animated">KMP</a>
-                        <a href="#section-about" class="btn btn--green btn--animated">Boyer-Moore</a>
-                        <a href="#section-about" class="btn btn--green btn--animated">Regular Expression</a>
+                        <div id="algorithm">
+                            <a href="#section-about" class="btn btn--green btn--animated">KMP</a>
+                            <a href="#section-about" class="btn btn--green btn--animated">Boyer-Moore</a>
+                            <a href="#section-about" class="btn btn--green btn--animated">Regular Expression</a>
+                        </div>
                     </div>
 
                     <div class="col-1-of-2">
-                        <h3 class="heading-tertiary u-margin-bottom-small ">
+                        <!-- <h3 class="heading-tertiary u-margin-bottom-small ">
                             Generated Post From (What) API
-                        </h3>
+                        </h3> -->
+                        <?php foreach ($tweets->statuses as $key => $tweet) { ?>
+                            Tweet : <img src="<?=$tweet->user->profile_image_url;?>" /><?=$tweet->text; ?><br>
+                        <?php } ?>
                         <p class="paragraph">
                             Bunch of API here
                         </p>
