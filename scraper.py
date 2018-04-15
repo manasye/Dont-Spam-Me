@@ -1,3 +1,5 @@
+import sys
+import os
 import tweepy
 import json
 import time
@@ -26,6 +28,10 @@ class print_listener(tweepy.StreamListener):
     def on_error(self, status):
         print(status)
 
+# Dumping list_of_posts to a json file
+def get_tweet_posts(posts) :
+    return json.dumps(list_of_posts)
+
 
 # Listener to tweepy
 listener = print_listener()
@@ -46,3 +52,6 @@ if __name__ == '__main__':
     stream = tweepy.Stream(auth, listener)
     # Set filter so the post will be in Indonesian
     stream.filter(track = ['Aku'])
+
+    # Print generated tweet posts
+    print (get_tweet_posts(sys.argv[1]))

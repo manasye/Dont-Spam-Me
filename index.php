@@ -71,8 +71,19 @@
 
                     <div class="col-2-of-3" id="posts">
                         <h3 class="heading-tertiary u-margin-bottom-small ">
-                            Generated Post From Twitter API : 
+                            Generated Post From Twitter API :
                         </h3>
+                        <p class=paragraph>
+                            <?php
+                            $result = exec ("python scraper.py C:\xampp\htdocs");
+                            $result_array = json_decode($result);
+                            $a = 0;
+                            foreach($result_array as $row) {
+                                $a = $a + 1;
+                                echo "<strong>". $a . ")</strong> ". $row . "<BR>";
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
             </section>
