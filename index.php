@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-
-        <link rel="stylesheet" href="css/icon-font.css">
         <link rel="stylesheet" href="css/style.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -79,11 +77,11 @@
                             $a = 0;
                             foreach ($result_array as $row) {
                                 $a = $a + 1;
-                                echo "<p class=\"paragraph\">
-                                <strong>". $a . ")</strong> ". $row . "
-                                </p>";
+                                echo "<div class = \"box-spam\"<p>
+                                ". $row . "
+                                </p></div>";
                             }
-                        ?>
+                        ?>         
                     </div>
                 </div>
             </section>

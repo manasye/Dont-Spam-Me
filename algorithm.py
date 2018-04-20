@@ -15,7 +15,6 @@ def regular_expression(list, keywords):
 
     regex = re.compile(keywords)
     for string in list:
-        matched = regex.findall(string)
         # Append the result based on spam or not
         if (regex.search(string)):
             list_of_status.append(True)
