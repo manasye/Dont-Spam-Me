@@ -58,14 +58,14 @@
                             Input Keywords : 
                         </h3>
                         <textarea name="input-column" id="input-column" cols="40" rows="1"></textarea>
-                        <!-- <a href="#algorithm" class="btn btn--whitegreen btn--animated">Submit</a> -->
+                        <a href="#algorithm" class="btn btn--whitegreen btn--animated">Submit</a>
                         <h3 class="heading-tertiary u-margin-bottom-small u-margin-top-medium">
                             Choose Algorithm : 
                         </h3>
                         <div id="algorithm">
-                            <a href="#section-about" class="btn btn--green btn--animated">KMP</a>
-                            <a href="#section-about" class="btn btn--green btn--animated">Boyer-Moore</a>
-                            <a href="#section-about" class="btn btn--green btn--animated">Regular Expression</a>
+                            <a href="#section-about" class="btn btn--green btn--animated" id="kmp">KMP</a>
+                            <a href="#section-about" class="btn btn--green btn--animated" id="bm">Boyer-Moore</a>
+                            <a href="#section-about" class="btn btn--green btn--animated" id="regex">Regular Expression</a>
                         </div>
                     </div>
 
@@ -75,13 +75,13 @@
                         </h3>
                         <p class=paragraph>
                             <?php
-                            $result = exec ("python scraper.py C:\xampp\htdocs");
-                            $result_array = json_decode($result);
-                            $a = 0;
-                            foreach($result_array as $row) {
-                                $a = $a + 1;
-                                echo "<strong>". $a . ")</strong> ". $row . "<BR>";
-                            }
+                                $result = exec ("python scraper.py E:\Installer\xampp\htdocs");
+                                $result_array = json_decode($result);
+                                $a = 0;
+                                foreach ($result_array as $row) {
+                                    $a = $a + 1;
+                                    echo "<strong>". $a . ")</strong> ". $row . "<BR>";
+                                }
                             ?>
                         </p>
                     </div>
