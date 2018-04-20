@@ -1,3 +1,33 @@
+import re
+
+'''
+MAIN FUNCTION
+'''
+
+def regular_expression(list, keywords):
+    # Status that hold the string is spam or not
+    list_of_status = []
+
+    for string in list:
+        continue
+        # Will be implemented
+
+
+def boyer_moore(list, keywords):
+    # Status that hold the string is spam or not
+    list_of_status = []
+
+    for string in list:
+        bm = search_occurence(string, keywords)
+        if (bm != -1):
+            list_of_status.append(True)
+        else:
+            list_of_status.append(False)
+
+
+'''
+HELPER FUNCTION
+'''
 def generate_last_occurence(string, size):
     # Set all number of chars to be -1
     last = [-1] * 128
@@ -36,12 +66,7 @@ def search_occurence(text, pattern):
 
     # Return -1 when didn't find any match
     return -1
- 
- 
-def main():
-    txt = "HAHAHAUHUAHAHAAHA"
-    pat = "HAHA"
-    print(search_occurence(txt, pat))
- 
+
 if __name__ == '__main__':
-    main()
+    list_of_str = ["aaa", "bba", "aaabbb"]
+    boyer_moore(list_of_str, "aaa")
