@@ -73,17 +73,17 @@
                         <h3 class="heading-tertiary u-margin-bottom-small ">
                             Generated Post From Twitter API :
                         </h3>
-                        <p class=paragraph>
-                            <?php
-                                $result = exec ("python scraper.py E:\Installer\xampp\htdocs");
-                                $result_array = json_decode($result);
-                                $a = 0;
-                                foreach ($result_array as $row) {
-                                    $a = $a + 1;
-                                    echo "<strong>". $a . ")</strong> ". $row . "<BR>";
-                                }
-                            ?>
-                        </p>
+                        <?php
+                            $result = exec ("python scraper.py E:\Installer\xampp\htdocs");
+                            $result_array = json_decode($result);
+                            $a = 0;
+                            foreach ($result_array as $row) {
+                                $a = $a + 1;
+                                echo "<p class=\"paragraph\">
+                                <strong>". $a . ")</strong> ". $row . "
+                                </p>";
+                            }
+                        ?>
                     </div>
                 </div>
             </section>

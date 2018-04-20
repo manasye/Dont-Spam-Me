@@ -8,26 +8,47 @@ def regular_expression(list, keywords):
     # Status that hold the string is spam or not
     list_of_status = []
 
+    # Set list and keywords to lower case
     for string in list:
-        continue
-        # Will be implemented
+        string.lower()
+    keywords.lower()
 
+    regex = re.compile(keywords)
+    for string in list:
+        matched = regex.findall(string)
+        # Append the result based on spam or not
+        if (regex.search(string)):
+            list_of_status.append(True)
+        else:
+            list_of_status.append(False)
+
+    print("List of status using Regular Expression: ")
+    print(list_of_status)
 
 def boyer_moore(list, keywords):
     # Status that hold the string is spam or not
     list_of_status = []
 
+    # Set list and keywords to lower case
+    for string in list:
+        string.lower()
+    keywords.lower()
+
     for string in list:
         bm = search_occurence(string, keywords)
+        # Append the result based on spam or not
         if (bm != -1):
             list_of_status.append(True)
         else:
             list_of_status.append(False)
 
+    print("List of status using Boyer Moore Algorithm: ")
+    print(list_of_status)
 
 '''
 HELPER FUNCTION
 '''
+
 def generate_last_occurence(string, size):
     # Set all number of chars to be -1
     last = [-1] * 128
@@ -68,5 +89,6 @@ def search_occurence(text, pattern):
     return -1
 
 if __name__ == '__main__':
-    list_of_str = ["aaa", "bba", "aaabbb"]
+    list_of_str = ["Aaac", "bba", "Aaabcbb"]
     boyer_moore(list_of_str, "aaa")
+    regular_expression(list_of_str, "aaac")
