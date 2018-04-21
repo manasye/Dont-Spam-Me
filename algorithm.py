@@ -3,20 +3,29 @@ import re
 '''
 MAIN FUNCTION
 '''
+def kmp(list,keywords):
+    # Status that hold the string is spam or not
+    list_of_status = []
+
+    for string in list:
+        # Append the result based on spam or not
+        if (search_kmp(string.lower(), keywords.lower())):
+            list_of_status.append(True)
+        else:
+            list_of_status.append(False)
+
+    print("List of status using KMP: ")
+    print(list_of_status)
+
 
 def regular_expression(list, keywords):
     # Status that hold the string is spam or not
     list_of_status = []
 
-    # Set list and keywords to lower case
-    for string in list:
-        string.lower()
-    keywords.lower()
-
-    regex = re.compile(keywords)
+    regex = re.compile(keywords.lower())
     for string in list:
         # Append the result based on spam or not
-        if (regex.search(string)):
+        if (regex.search(string.lower())):
             list_of_status.append(True)
         else:
             list_of_status.append(False)
@@ -28,13 +37,10 @@ def boyer_moore(list, keywords):
     # Status that hold the string is spam or not
     list_of_status = []
 
-    # Set list and keywords to lower case
     for string in list:
-        string.lower()
-    keywords.lower()
+        # Set string and keywords to lower case
+        bm = search_occurence(string.lower(), keywords.lower())
 
-    for string in list:
-        bm = search_occurence(string, keywords)
         # Append the result based on spam or not
         if (bm != -1):
             list_of_status.append(True)
@@ -47,6 +53,39 @@ def boyer_moore(list, keywords):
 '''
 HELPER FUNCTION
 '''
+
+def search_kmp(text, word):
+    idx_table = []
+    idx_table.append(0)
+    j = 0
+    cont = False;
+    
+    for i in range(1, len(word) - 1):
+        if (word[i] == word[j]):
+            j += 1
+            cont = True
+        else:
+            cont = False
+        if (not(cont)):
+            j = 0
+        idx_table.append(j)
+
+    idx = 0
+    found = False
+    j = 0
+
+    while (idx < len(text) and not found):
+            if (text[idx] == word[j]):
+                j += 1
+                if (j == len(word)):
+                    found = True
+            else:
+                if (j > 0):
+                    j = idx_table[j-1]
+                    idx -= 1
+            idx += 1
+        
+    return found;
 
 def generate_last_occurence(string, size):
     # Set all number of chars to be -1
@@ -90,4 +129,5 @@ def search_occurence(text, pattern):
 if __name__ == '__main__':
     list_of_str = ["Aaac", "bba", "Aaabcbb"]
     boyer_moore(list_of_str, "aaa")
-    regular_expression(list_of_str, "aaac")
+    regular_expression(list_of_str, "aaa")
+    kmp(list_of_str, "aaa")
