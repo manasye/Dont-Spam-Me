@@ -76,10 +76,20 @@
                             $result_array = json_decode($result);
                             $a = 0;
                             foreach ($result_array as $row) {
-                                $a = $a + 1;
-                                echo "<div class = \"box-spam\"<p>
-                                ". $row . "
-                                </p></div>";
+                                if ($a == 25) {
+                                    break;
+                                } else {
+                                    $a = $a + 1;
+                                    if ($a % 2 == 0) {
+                                        echo "<div class = \"box-spam\"<p>
+                                        ". $row . "
+                                        </p></div>";
+                                    } else {
+                                        echo "<div class = \"box-not-spam\"<p>
+                                        ". $row . "
+                                        </p></div>";
+                                    }
+                                }                               
                             }
                         ?>         
                     </div>
