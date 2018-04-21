@@ -55,7 +55,9 @@
                         <h3 class="heading-tertiary u-margin-bottom-small ">
                             Input Keywords : 
                         </h3>
-                        <textarea name="input-column" id="input-column" cols="40" rows="1"></textarea>
+                        <form name="form" action="" method="get">
+                            <input type="text" name="inputcolumn" id="inputcolumn" value="">
+                        </form>
                         <a href="#algorithm" class="btn btn--whitegreen btn--animated">Submit</a>
                         <h3 class="heading-tertiary u-margin-bottom-small u-margin-top-medium">
                             Choose Algorithm : 
@@ -75,27 +77,24 @@
                             $result = exec ("python scraper.py E:\Installer\xampp\htdocs");
                             $result_array = json_decode($result);
                             $a = 0;
+                            echo '<script>';
+                            echo 'var result = '. $result .';';
+                            echo '</script>';
                             foreach ($result_array as $row) {
                                 if ($a == 25) {
                                     break;
                                 } else {
                                     $a = $a + 1;
-                                    if ($a % 2 == 0) {
-                                        echo "<div class = \"box-spam\"<p>
-                                        ". $row . "
-                                        </p></div>";
-                                    } else {
-                                        echo "<div class = \"box-not-spam\"<p>
-                                        ". $row . "
-                                        </p></div>";
-                                    }
-                                }                               
+                                    echo "<div class = \"box-spam\"<p>
+                                    ". $row . "
+                                    </p></div>";
+                                }
                             }
                         ?>         
                     </div>
                 </div>
             </section>
 
-     <script type="text/javascript" src="javascript/animations.js"></script>
+     <script type="text/javascript" src="animations.js"></script>
     </body>
 </html>

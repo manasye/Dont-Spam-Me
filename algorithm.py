@@ -1,4 +1,6 @@
 import re
+import sys
+import os
 
 '''
 MAIN FUNCTION
@@ -127,7 +129,9 @@ def search_occurence(text, pattern):
     return -1
 
 if __name__ == '__main__':
-    list_of_str = ["Aaac", "bba", "Aaabcbb"]
-    boyer_moore(list_of_str, "aaa")
-    regular_expression(list_of_str, "aaa")
-    kmp(list_of_str, "aaa")
+    if (sys.argv[1] == "bm"):
+        boyer_moore(sys.argv[3], sys.argv[2])
+    elif (sys.argv[1] == "regex"):
+        regular_expression(sys.argv[3], sys.argv[2])
+    else:
+        kmp(sys.argv[3], sys.argv[2])
