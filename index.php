@@ -85,7 +85,7 @@
                                     break;
                                 } else {
                                     $a = $a + 1;
-                                    echo "<div class = \"box-spam\"<p>
+                                    echo "<div class = \"default-box\"<p>
                                     ". $row . "
                                     </p></div>";
                                 }
