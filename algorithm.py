@@ -77,7 +77,7 @@ def search_kmp(text, word):
     idx_table = []
     idx_table.append(0)
     j = 0
-    cont = False;
+    cont = False
     
     # Searching word while appending to index table
     for i in range(1, len(word) - 1):
@@ -106,7 +106,7 @@ def search_kmp(text, word):
                     idx -= 1
             idx += 1
         
-    return found;
+    return found
 
 def generate_last_occurence(string, size):
     # Set all number of chars to be -1
@@ -114,7 +114,7 @@ def generate_last_occurence(string, size):
  
     # Fill the actual value of last occurence
     for i in range(size):
-        last[ord(string[i])] = i;
+        last[ord(string[i])] = i
  
  	# Return last occurence list
     return last
@@ -149,22 +149,17 @@ def search_occurence(text, pattern):
 
 if __name__ == '__main__':
 
-    list_of_posts = sys.argv[3]
-    key = sys.argv[2]
-    command = sys.argv[1]
+    with open("post.json") as f:
+        list_of_posts = json.loads(f.read())
+    # sys.argv[2] = "sibuk"
+    # sys.argv[1] = "bm"
 
-    if (key == "bm"):
-        json_out = json.dumps(kmp(list_of_posts, key))
+    if (sys.argv[1] == "bm"):
+        json_out = kmp(list_of_posts, sys.argv[2])
         print(json.JSONEncoder().encode(json_out))
-    elif (key == "regex"):
-        json_out = json.dumps(regular_expression(list_of_posts, key))
+    elif (sys.argv[1] == "regex"):
+        json_out = regular_expression(list_of_posts, sys.argv[2])
         print(json.JSONEncoder().encode(json_out))
     else:
-        json_out = json.dumps(kmp(list_of_posts, key))
+        json_out = kmp(list_of_posts, sys.argv[2])
         print(json.JSONEncoder().encode(json_out))
-    
-    if (os.path.exists('result.txt')):
-        os.remove('result.txt')
-    file = open('result.txt', 'w')
-    file.write(json_out)
-    file.close()

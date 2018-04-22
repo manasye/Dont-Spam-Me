@@ -3,12 +3,13 @@
     var_dump($command);
     $keywords = $_POST["key"];
     var_dump($keywords);
-    $tweets = json_decode($_POST["posts"]);
-   
-    $test = json_encode($tweets);
-    $result = exec("E:Installer/xampp/htdocs/algorithm.py $command $keywords $test");
-    var_dump($result);
-    echo (file_get_contents('result.txt'));
+    $posts = $_POST["posts"];
 
-    return 0;
+    $fp = fopen('post.json', 'w');
+    fwrite($fp, json_encode($posts));
+    fclose($fp);
+
+    // $python = python algorithm.py ' . $command . ' ' . $keywords . ' ' . ' ' . $posts . 'E:\Installer\xampp\htdocs';
+    $result = exec('python algorithm.py '.$command.' '.$keywords );
+    echo $result;
 ?>
