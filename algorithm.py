@@ -36,16 +36,15 @@ def regular_expression(list_of_posts, keywords):
     pattern += ".*"
 
     # Compile pattern into regex pattern
-    print(pattern)
     regex = re.compile(pattern)
     
     index = 0
     for string in list_of_posts:
         # Append the result based on spam or not
         if (regex.match(string.lower())):
-            list_of_status[index].append(True)
+            list_of_status[index] = True
         else:       
-            list_of_status[index].append(False)
+            list_of_status[index] = False
         index += 1
         
     return list_of_status
@@ -151,8 +150,6 @@ if __name__ == '__main__':
 
     with open("post.json") as f:
         list_of_posts = json.loads(f.read())
-    # sys.argv[2] = "sibuk"
-    # sys.argv[1] = "bm"
 
     if (sys.argv[1] == "bm"):
         json_out = kmp(list_of_posts, sys.argv[2])

@@ -24,7 +24,6 @@
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="#homepage" class="navigation__link">Home</a></li>
                     <li class="navigation__item"><a href="#section-app" class="navigation__link">Spam Analyzer</a></li>
-                    <li class="navigation__item"><a href="#about" class="navigation__link">About Us</a></li>
                 </ul>
             </nav>
         </div>
