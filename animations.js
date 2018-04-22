@@ -20,17 +20,12 @@ $(document).ready(function () {
                 posts: result
             },
             success: function (response) {
-                strSplit = response.split(',');
-                for (var i = 0; i < 25; i++) {
-                    if (strSplit[i].includes("false")) {
-                        spam[i] = false;
-                    } else {
-                        spam[i] = true;
-                    }
-                }
+                console.log(response);
+                var re = JSON.parse(response);
+                console.log(re);
 
                 $('.default-box').each(function (i, obj) {
-                    if (spam[i] == false) {
+                    if (re[i] == false) {
                         $(this).attr('class', 'box-not-spam');
                     } else {
                         $(this).attr('class', 'box-spam');
@@ -57,17 +52,12 @@ $(document).ready(function () {
                 posts: result
             },
             success: function (response) {
-                strSplit = response.split(',');
-                for (var i = 0; i < 25; i++) {
-                    if (strSplit[i].includes("false")) {
-                        spam[i] = false;
-                    } else {
-                        spam[i] = true;
-                    }
-                }
+                console.log(response);
+                var re = JSON.parse(response);
+                console.log(re);
 
-                $('.default-box').each(function(i, obj) {
-                    if (spam[i] == false) {
+                $('.default-box').each(function (i, obj) {
+                    if (re[i] == false) {
                         $(this).attr('class', 'box-not-spam');
                     } else {
                         $(this).attr('class', 'box-spam');
@@ -93,18 +83,12 @@ $(document).ready(function () {
                 posts: result
             },
             success: function (response) {
-                strSplit = response.split(',');
-                console.log(strSplit);
-                for (var i = 0; i < 25; i++) {
-                    if (strSplit[i].includes("false")) {
-                        spam[i] = false;
-                    } else {
-                        spam[i] = true;
-                    }
-                }
+                console.log(response);
+                var re = JSON.parse(response);
+                console.log(re);
 
                 $('.default-box').each(function (i, obj) {
-                    if (spam[i] == false) {
+                    if (re[i] == false) {
                         $(this).attr('class', 'box-not-spam');
                     } else {
                         $(this).attr('class', 'box-spam');
