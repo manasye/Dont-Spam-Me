@@ -24,7 +24,7 @@ def kmp(list_of_posts, keywords):
 
 def regular_expression(list_of_posts, keywords):
     # Status that hold the string is spam or not
-    list_of_status = []
+    list_of_status = {}
 
     # Split the pattern to each character to insert .*
     pat_split = list(keywords.lower())
@@ -39,28 +39,32 @@ def regular_expression(list_of_posts, keywords):
     print(pattern)
     regex = re.compile(pattern)
     
+    index = 0
     for string in list_of_posts:
         # Append the result based on spam or not
         if (regex.match(string.lower())):
-            list_of_status.append(True)
-        else:
-            list_of_status.append(False)
-
+            list_of_status[index].append(True)
+        else:       
+            list_of_status[index].append(False)
+        index += 1
+        
     return list_of_status
 
 def boyer_moore(list_of_posts, keywords):
     # Status that hold the string is spam or not
-    list_of_status = []
+    list_of_status = {}
 
+    index = 0
     for string in list_of_posts:
         # Set string and keywords to lower case
         bm = search_occurence(string.lower(), keywords.lower())
 
         # Append the result based on spam or not
         if (bm != -1):
-            list_of_status.append(True)
+            list_of_status[index].append(True)
         else:
-            list_of_status.append(False)
+            list_of_status[index].append(False)
+        index += 1
 
     return list_of_status
 
