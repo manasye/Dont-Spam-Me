@@ -150,13 +150,22 @@ if __name__ == '__main__':
 
     with open("post.json") as f:
         list_of_posts = json.loads(f.read())
+    f.close()
 
-    if (sys.argv[1] == "bm"):
-        json_out = kmp(list_of_posts, sys.argv[2])
+    with open("command.txt") as fc:
+        command = fc.readline()
+    fc.close()
+
+    with open("keyword.txt") as fk:
+        keyword = fk.readline()
+    fk.close()
+
+    if (command == "bm"):
+        json_out = kmp(list_of_posts, keyword)
         print(json.JSONEncoder().encode(json_out))
-    elif (sys.argv[1] == "regex"):
-        json_out = regular_expression(list_of_posts, sys.argv[2])
+    elif (command == "regex"):
+        json_out = regular_expression(list_of_posts, keyword)
         print(json.JSONEncoder().encode(json_out))
     else:
-        json_out = kmp(list_of_posts, sys.argv[2])
+        json_out = kmp(list_of_posts, keyword)
         print(json.JSONEncoder().encode(json_out))

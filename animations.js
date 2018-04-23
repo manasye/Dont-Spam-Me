@@ -9,6 +9,7 @@ $(document).ready(function () {
         var spam = [];
         var command = 'kmp';
         var keywords = $('#inputcolumn').val();
+        console.log(keywords);
         console.log(result);
 
         $.ajax({
@@ -33,7 +34,6 @@ $(document).ready(function () {
                 });
             }
         });
-
     });
 
     $('#bm').on('click', function() {
@@ -41,6 +41,7 @@ $(document).ready(function () {
         var spam = [];
         var command = 'bm';
         var keywords = $('#inputcolumn').val();
+        console.log(keywords);
         console.log(result);
 
         $.ajax({
@@ -72,6 +73,7 @@ $(document).ready(function () {
         var spam = [];
         var command = 'regex';
         var keywords = $('#inputcolumn').val();
+        console.log(keywords);
         console.log(result);
 
         $.ajax({

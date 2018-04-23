@@ -7,7 +7,14 @@
     fwrite($fp, json_encode($posts));
     fclose($fp);
 
-    // $python = python algorithm.py ' . $command . ' ' . $keywords . ' ' . ' ' . $posts . 'E:\Installer\xampp\htdocs';
+    $file_command = fopen("command.txt", "w") or die("Unable to open file!");
+    fwrite($file_command, $command);
+    fclose($file_command);
+    
+    $file_keyword = fopen("keyword.txt", "w") or die("Unable to open file!");
+    fwrite($file_keyword, $keywords);
+    fclose($file_keyword);
+
     $result = exec('python algorithm.py '.$command.' '.$keywords );
     echo $result;
 ?>
