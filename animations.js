@@ -12,6 +12,14 @@ $(document).ready(function () {
         console.log(keywords);
         console.log(result);
 
+        $('.box-not-spam').each(function (i, obj) {
+             $(this).attr('class', 'default-box');
+        });
+
+        $('.box-spam').each(function (i, obj) {
+            $(this).attr('class', 'default-box');
+        });
+
         $.ajax({
             type: "POST",
             url: "./proc.php",
@@ -44,6 +52,14 @@ $(document).ready(function () {
         console.log(keywords);
         console.log(result);
 
+        $('.box-not-spam').each(function (i, obj) {
+            $(this).attr('class', 'default-box');
+        });
+
+        $('.box-spam').each(function (i, obj) {
+            $(this).attr('class', 'default-box');
+        });
+
         $.ajax({
             type: "POST",
             url: "./proc.php",
@@ -75,6 +91,14 @@ $(document).ready(function () {
         var keywords = $('#inputcolumn').val();
         console.log(keywords);
         console.log(result);
+
+        $('.box-not-spam').each(function (i, obj) {
+            $(this).attr('class', 'default-box');
+        });
+
+        $('.box-spam').each(function (i, obj) {
+            $(this).attr('class', 'default-box');
+        });
 
         $.ajax({
             type: "POST",
